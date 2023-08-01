@@ -1,94 +1,164 @@
-div[data-e2e='top-giver'] {
-  width: 15vw;
-  height: 40px;
-  top: 20px;
-  margin-bottom: 15px;
-  position: relative;
+div[class*="TopGiverContainer"] {
 }
-div[data-e2e='top-giver'] h3 {
-  overflow: visible;
-  text-align: left;
+
+div[class*="TopGiverContainer"] h3 {
+	text-align: left;
+	overflow: visible;
 }
+
 /* Place/Position Number  */
-div[data-e2e='top-giver'] div:first-child {
-  margin-right: 6px;
+div[class*="TopGiverContainer"] div:first-child {
+	margin-right: 6px;
+}
+div[class*="TopGiverContainer"] h3 + div {
+	position: relative;
+	display: block;
+	margin-top: -8px;
+	height: 30px;
+	width: 100%;
+	text-align: left;
+	font-size: 1.5em !important;
+	margin-left: -4px;
+	align-items: unset;
+	overflow: visible;
+}
+div[class*="TopGiverInfo"] > div > div {
+	margin-left: -8px;
+}
+div[class*="TopGiverInfo"] > div > div span:first-child {
+	position: relative;
+	display: inline-block;
+}
+div[class*="TopGiverContainer"] h3 + div span {
+	font-size: 0.94em;
+}
+div[data-e2e="top-givers-header"] {
+	position: absolute;
+	padding-left: 15px;
+	border-bottom-left-radius: 8px;
+	transition: color 250ms linear, box-shadow 100ms ease-out;
+}
+div[data-e2e="top-givers-header"]:hover {
+	color: #000000 !important;
+	box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0 10px 0px rgba(0, 0, 0, 0.05);
 }
 
-div[data-e2e='top-giver'] h3 + div {
-  height: 30px;
-  width: 100%;
-  text-align: left;
-  font-size: 1.5em !important;
-  margin-left: -4px;
-  position: relative;
-  display: block;
-  align-items: unset;
-  overflow: visible;
-  margin-top: -8px;
+div[class*="TopViewersContainer"] {
+	position: absolute;
+	right: 0px;
+	width: 357px;
+	z-index: 100;
+	overflow: visible;
 }
-div.tiktok-8lmm4f-DivTopGiverInfo.e8wpgj89 > div > div {
-    margin-left: -8px;
-}
-div.tiktok-8lmm4f-DivTopGiverInfo.e8wpgj89 > div > div span:first-child {
-  position: relative;
-  display: inline-block;
-  /* top: 0.5px; */
-}
-div[data-e2e='top-giver'] h3 + div span {
-  font-size: 0.94em;
-}
-div[data-e2e='top-givers-header'] {
-  position: absolute;
+div[data-e2e="top-givers"] {
+	border: 0 none;
 }
 
-.tiktok-ok2yb0-StyledTopGiverAvatar {
-  width: 50%;
-  height: 50%;
-  top: 5px;
-  position: relative;
+div[class*="BubbleVisibleContainer"] {
+	overflow: visible;
 }
 
-
-div.tiktok-xj24e7-DivLiveRoomBanner {
-  width: calc(100%);
+div[class*="FirstGiverBox"] {
+	position: absolute;
+	display: block;
+	margin: 0px;
+	width: 250px;
+	height: 140px;
+	box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0 10px 0px rgba(0, 0, 0, 0.05);
+	/* border-top-left-radius: 10px; */
+	border-bottom-left-radius: 10px;
+	right: 0px;
+	z-index: 20;
+	background-color: #ffffff;
+}
+div[class*="FirstGiverBox"] div[class*="UserCardClickWrapperProps"] {
+	height: auto;
+	width: 100%;
+}
+div[class*="FirstGiverBox"]
+	div[class*="UserCardClickWrapperProps"]
+	div[data-e2e="top-giver"] {
+	position: relative;
+	width: 100%;
+	top: 10px;
+}
+div[data-e2e="top-giver"] div[class*="TopGiverIndex"] {
+	width: 40px;
+	margin: 0 0 0 10%;
 }
 
+div[data-e2e="top-giver"] div[class*="TopGiverInfo"] {
+	min-width: 52%;
+	margin: 0 auto 0 0;
+}
 
+/* 1st Place Icon */
+div[class*="FirstGiverBox"] img[class*="StyledTopGiverAvatar"] {
+	width: 50%;
+	height: 50%;
+	top: 5px;
+	position: relative;
+}
 
+/* 2nd, 3rd Place */
+div[class*="RestGiversBox"] {
+	position: absolute;
+	display: block;
+	margin: 0px;
+	padding-top: 23px;
+	width: 250px;
+	height: 140px;
+	box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0 10px 0px rgba(0, 0, 0, 0.05);
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	right: 0px;
+	top: 125px;
+	z-index: 10;
+	background-color: #ffffff;
+}
+
+div[class*="RestGiversBox"] div[class*="UserCardClickWrapperProps"] {
+	height: auto;
+	width: 100%;
+}
+
+div[class*="RestGiversBox"] div[data-e2e="top-giver"] {
+	height: 55px;
+}
+div[class*="LiveRoomBanner"] {
+	width: calc(100%);
+}
 
 /*
  * Middle:
  */
 
-
-div.tiktok-1okbypp-DivRoomPlayerActivePanel,
-div.tiktok-1k53s81-DivLiveContent {
-  /* display: none !important; */
-  /* Video: Set: Aspect Ratio */
-  aspect-ratio: 9/16 !important;
-  /* display: none; */
+div[class*="RoomPlayerActivePanel"],
+div[class*="LiveContent"] {
+	/* Video: Set: Aspect Ratio */
+	aspect-ratio: 9/16 !important;
+	/* display: none; */
 }
 
 /*
  * Middle: Video
  */
 
-div[data-e2e='live-player'] {
-  height: calc(100% - 17px);
-  margin: 0 auto;
+div[data-e2e="live-player"] {
+	height: calc(100% - 17px);
+	margin: 0 auto;
 }
-
-
 
 /*
  * Middle: Panel: Recommended Videos
  */
 
 /* Hide: Panel: Recommended Videos */
-div.tiktok-xz1ru-DivLiveRecommendedList {
-  display: none !important;
+div[class*="LiveRecommendedList"] {
+	display: none !important;
 }
 
+/*
 
 
 
@@ -96,158 +166,184 @@ div.tiktok-xz1ru-DivLiveRecommendedList {
 
 
 
+
+*/
 
 /* 
  * Chat
  */
 
 /* Hide: Chat: Button: Close [X] */
-div[data-e2e='chat-close-button'] {
-  display: none !important;
+div[data-e2e="chat-close-button"] {
+	display: none !important;
 }
-
-
 
 /* Chat Room */
-.tiktok-1hg8kve-DivChatRoomAnimationContainer {
-  background-color: #fff;
-  top: 66px;
-  width: 100%;
-  height: calc(100vh - 60px - 66px);
-  position: absolute;
+div[class*="ChatRoomAnimationContainer"] {
+	background-color: #fff;
+	top: 66px;
+	width: 100%;
+	height: calc(100vh - 60px - 66px);
+	position: absolute;
+}
+div[class*="ChatRoomBody"] {
+	padding: 0px;
 }
 
-div[data-e2e='chat-room'] {
-  /* display: none; */
-  background: none rgba(253, 253, 255, 0.96) !important;
-  width: 100%;
-  position: absolute !important;
+div[data-e2e="chat-room"] {
+	/* display: none; */
+	background: none rgba(253, 253, 255, 0.96) !important;
+	width: 100%;
+	position: absolute !important;
 }
 
-
+/* Chat Room: Chat Messages Container */
+div[class*="ChatMessageList"] {
+	scroll-behavior: smooth;
+}
 
 /*
  * Gift
  */
 
-span[data-e2e='message-owner-name'] span {
-  text-overflow: unset !important;
-  max-width: 1000px;
+span[data-e2e="message-owner-name"] span {
+	text-overflow: unset !important;
+	max-width: 1000px;
 }
 
-span[data-e2e='message-owner-name'] + span span {
-  font-size: 16px;
-  margin-left: 8px;
-  padding: 1px;
-  line-height: 155%;
-  height: 25px;
+span[data-e2e="message-owner-name"] + span span {
+	font-size: 16px;
+	margin-left: 8px;
+	padding: 1px;
+	line-height: 155%;
+	height: 25px;
 }
-span[data-e2e='message-owner-name'] + span span:first {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+span[data-e2e="message-owner-name"] + span span:first {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-span[data-e2e='message-owner-name'] + span span img {
-  /* width: 180%; */
-  height: 110%;
-  margin-left: 2px;
+span[data-e2e="message-owner-name"] + span span img {
+	/* width: 180%; */
+	height: 110%;
+	margin-left: 2px;
 }
-span[data-e2e='message-owner-name'] + span span img + * {
-  margin-left: 4px;
-  margin-right: 6px;
+span[data-e2e="message-owner-name"] + span span img + * {
+	margin-left: 4px;
+	margin-right: 6px;
 }
 
 /* Gift: Message Container */
-span[data-e2e='message-owner-name'] + div {
-  margin: 10px auto;
-  margin-left: 7px;
+span[data-e2e="message-owner-name"] + div {
+	margin: 10px auto;
+	margin-left: 7px;
 }
 /* Gift Image */
-span[data-e2e='message-owner-name'] + div img {
-  margin-left: 10px;
-  padding: 4px;
-  width: 56px;
-  height: 56px;
-  letter-spacing: 10px;
-  text-shadow: 2px 1px 1px #000;
-  background-color: #000;
-  border-radius: 7px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+span[data-e2e="message-owner-name"] + div img {
+	margin-left: 10px;
+	padding: 4px;
+	width: 56px;
+	height: 56px;
+	letter-spacing: 10px;
+	text-shadow: 2px 1px 1px #000;
+	background-color: #000;
+	border-radius: 7px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 /* Gift: Amount */
-span[data-e2e='message-owner-name'] + div span {
-  color: #000;
-  padding: 10px;
-  margin-left: 1px;
-  font-weight: bold;
-  letter-spacing: -0.03em;
-  height: 55px;
-  line-height: 180%;
-  font-size: 160%;
+span[data-e2e="message-owner-name"] + div span {
+	color: #000;
+	padding: 10px;
+	margin-left: 1px;
+	font-weight: bold;
+	letter-spacing: -0.03em;
+	height: 55px;
+	line-height: 180%;
+	font-size: 160%;
 }
-span[data-e2e='message-owner-name'] + div span::first-letter {
-  font-size: 55%;
-  letter-spacing: 0.219em;
-}
-
-
-/* User Icon/pic */
-[data-e2e='chat-message'] div > img {
-  width: 50px;
-  height: 50px;
+/* Gift: 'x' */
+span[data-e2e="message-owner-name"] + div span::first-letter {
+	font-size: 55%;
+	letter-spacing: 0.219em;
 }
 
-[data-e2e='chat-message'] div:last-child {
-  margin-top: 2px;
+/* Chat Message: Button: More "..." */
+[data-e2e="chat-message"] div[data-e2e="more-action-button"] {
+	margin-top: 2px;
 }
 
-
-
-div.tiktok-ip2j3e-DivUserInfo {
-  font-size: 20px !important;
-  line-height: 1.2em;
+div[class*="UserInfo"] {
+	font-size: 20px !important;
+	line-height: 1.2em;
 }
 
+div[data-e2e="chat-message"],
+div[class*="SocialMessage"] {
+	padding: 8px 16px !important;
+	font-size: 22px !important;
+	line-height: 1.2em !important;
+}
+div[class*="SocialMessage"] {
+	text-align: right;
+	background-color: #333;
+	color: #aaa;
+}
 
-.tiktok-1orcc4m-DivChatMessage,
-.tiktok-meid7v-DivSocialMessage,
+/* Chat Message: Gift 🎁 */
+
+/* Chat Message: Gift Container */
 .tiktok-15hhtcj {
-  padding: 8px 16px !important;
-  font-size: 22px !important;
-  line-height: 1.2em !important;
+	/* Layout */
+	padding: 8px 16px !important;
+	/* Text */
+	font-size: 22px !important;
+	line-height: 1.2em !important;
+	text-align: center !important;
+	/* Appearance */
+	color: #aaaaaa !important;
+	background: (250, 234, 195) !important;
+	background: linear-gradient(
+		19deg,
+		rgba(250, 234, 195, 1) 31%,
+		rgba(255, 228, 172, 1) 49%,
+		rgba(249, 219, 164, 1) 63%
+	) !important;
 }
-.tiktok-meid7v-DivSocialMessage,
-.tiktok-15hhtcj {
-  text-align: right;
-  background-color: #333;
-  color: #aaa;
+/* Chat Message: Gift  */
+.tiktok-15hhtcj .tiktok-9wfq77 {
+	margin: 0 auto;
+	text-align: center;
 }
-
-/* Gift */
-.tiktok-15hhtcj {
-  background-color: pink;
-  text-align: center !important;
-}
-.tiktok-9wfq77 {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.tiktok-meid7v-DivSocialMessage .tiktok-101i1gy-SpanNickName {
-  color: #fff !important;
-  font-weight: 900;
-  padding: 0px 10px;
-}
-.tiktok-meid7v-DivSocialMessage .tiktok-1ymr58b-SpanEllipsisName {
-  max-width: 1000px;
-}
-.tiktok-1e6in64-DivLeadIcon {
-  float: right !important;
+.tiktok-15hhtcj .tiktok-9wfq77 span[class*="NickName"] {
+	font-weight: bold;
+	color: rgb(22 24 35 / 79%);
 }
 
+div[class*="SocialMessage"] span[class*="NickName"] {
+	color: #fff !important;
+	font-weight: 900;
+	padding: 0px 10px;
+}
+div[class*="SocialMessage"] span[class*="EllipsisName"] {
+	max-width: 1000px;
+}
+div[class*="SocialMessage"] div[data-e2e="social-message-text"] {
+	padding-top: 11px;
+}
 
-/* Size: Icons: User */
-.tiktok-1vu76js-DivLeadIcon,
-.tiktok-q7fdfv-DivLeadIcon-StyledLeadIcon {
-  width: 50px;
-  height: 50px;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+/* Chat Room: Message: User: Icon */
+div[class*="LeadIcon"],
+div[class*="LeadIcon-StyledLeadIcon"] {
+	width: 50px;
+	height: 50px;
+}
+
+/* Chat Room: Message: Join */
+div[class*="BottomStickyMessageContainer"] {
+	background-color: rgba(253, 253, 255, 0.96);
+}
+
+/* Chat Room: Message: Join: User: Icon */
+div[class*="BottomStickyMessageContainer"] div[class*="LeadIcon"] {
+	width: 16px;
+	height: 16px;
+	margin-top: 4px;
 }
