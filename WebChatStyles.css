@@ -1,4 +1,22 @@
-div[class*="TopGiverContainer"] {
+div[class*="SideNavContainerV2"],
+div[class*="ScrollContainer-StyledScrollV2"],
+div[data-e2e="live-side-nav-channel"] {
+	width: 72px;
+}
+div[class*="FooterContainer"],
+div[data-e2e="live-side-nav-channel-title"],
+div[data-e2e="live-side-more-button"] {
+	display: none;
+}
+div[data-e2e="nav-foryou"] {
+	justify-content: center;
+}
+span[class*="MainNavText"],
+div[class*="NewLableContainer"] {
+	display: none;
+}
+div[class*="ExploreRedDotContainer"] {
+	display: block;
 }
 
 div[class*="TopGiverContainer"] h3 {
@@ -65,7 +83,6 @@ div[class*="FirstGiverBox"] {
 	width: 250px;
 	height: 140px;
 	box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0 10px 0px rgba(0, 0, 0, 0.05);
-	/* border-top-left-radius: 10px; */
 	border-bottom-left-radius: 10px;
 	right: 0px;
 	z-index: 20;
@@ -136,7 +153,7 @@ div[class*="LiveRoomBanner"] {
 div[class*="RoomPlayerActivePanel"],
 div[class*="LiveContent"] {
 	/* Video: Set: Aspect Ratio */
-	aspect-ratio: 9/16 !important;
+	/* aspect-ratio: 9/16 !important; */
 	/* display: none; */
 }
 
@@ -158,19 +175,10 @@ div[class*="LiveRecommendedList"] {
 	display: none !important;
 }
 
-/*
-
-
-
-
-
-
-
-
-*/
-
 /* 
+ *
  * Chat
+ * 
  */
 
 /* Hide: Chat: Button: Close [X] */
@@ -190,8 +198,13 @@ div[class*="ChatRoomBody"] {
 	padding: 0px;
 }
 
+div[class*="ChatRoomHeader"] {
+	width: 100%;
+	box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0),
+		0px 2px 7px 0px rgba(128, 128, 128, 0.05);
+}
+
 div[data-e2e="chat-room"] {
-	/* display: none; */
 	background: none rgba(253, 253, 255, 0.96) !important;
 	width: 100%;
 	position: absolute !important;
@@ -200,6 +213,7 @@ div[data-e2e="chat-room"] {
 /* Chat Room: Chat Messages Container */
 div[class*="ChatMessageList"] {
 	scroll-behavior: smooth;
+	padding-top: 0px;
 }
 
 /*
@@ -270,6 +284,17 @@ span[data-e2e="message-owner-name"] + div span::first-letter {
 	margin-top: 2px;
 }
 
+div[class*="RoomMessage"] {
+	font-size: 22px;
+	background: (235, 241, 242) !important;
+	background: linear-gradient(
+		142deg,
+		rgb(235 241 242) 31%,
+		rgb(199 214 226) 49%,
+		rgb(203 210 218) 63%
+	) !important;
+}
+
 div[class*="UserInfo"] {
 	font-size: 20px !important;
 	line-height: 1.2em;
@@ -277,9 +302,15 @@ div[class*="UserInfo"] {
 
 div[data-e2e="chat-message"],
 div[class*="SocialMessage"] {
+	/* Layout */
 	padding: 8px 16px !important;
-	font-size: 22px !important;
+	/* Text */
 	line-height: 1.2em !important;
+	font-size: 22px !important;
+}
+div[data-e2e="chat-message"]:hover,
+div[class*="SocialMessage"]:hover {
+	background-color: rgb(248, 248, 248, 0.98);
 }
 div[class*="SocialMessage"] {
 	text-align: right;
