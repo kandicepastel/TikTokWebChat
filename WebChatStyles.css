@@ -83,6 +83,7 @@ div[class*="FirstGiverBox"] {
 	width: 250px;
 	height: 140px;
 	box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0 10px 0px rgba(0, 0, 0, 0.05);
+	/* border-top-left-radius: 10px; */
 	border-bottom-left-radius: 10px;
 	right: 0px;
 	z-index: 20;
@@ -205,6 +206,7 @@ div[class*="ChatRoomHeader"] {
 }
 
 div[data-e2e="chat-room"] {
+	/* display: none; */
 	background: none rgba(253, 253, 255, 0.96) !important;
 	width: 100%;
 	position: absolute !important;
@@ -302,14 +304,11 @@ div[class*="UserInfo"] {
 
 div[data-e2e="chat-message"],
 div[class*="SocialMessage"] {
-	/* Layout */
 	padding: 8px 16px !important;
-	/* Text */
-	line-height: 1.2em !important;
 	font-size: 22px !important;
+	line-height: 1.2em !important;
 }
-div[data-e2e="chat-message"]:hover,
-div[class*="SocialMessage"]:hover {
+div[data-e2e="chat-message"]:hover {
 	background-color: rgb(248, 248, 248, 0.98);
 }
 div[class*="SocialMessage"] {
