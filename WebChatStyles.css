@@ -1,3 +1,11 @@
+:root {
+	--video--width--max: 250px;
+	--video--width: var(--video--width--max);
+	--video--height: calc((var(--video--width--max) * 16) / 9);
+	--video--aspect-ratio: calc(9 / 16);
+}
+
+/* Left Navigation */
 div[class*="SideNavContainerV2"],
 div[class*="ScrollContainer-StyledScrollV2"],
 div[data-e2e="live-side-nav-channel"] {
@@ -19,6 +27,7 @@ div[class*="ExploreRedDotContainer"] {
 	display: block;
 }
 
+/* Top Givers */
 div[class*="TopGiverContainer"] h3 {
 	text-align: left;
 	overflow: visible;
@@ -143,6 +152,8 @@ div[class*="RestGiversBox"] div[class*="UserCardClickWrapperProps"] {
 div[class*="RestGiversBox"] div[data-e2e="top-giver"] {
 	height: 55px;
 }
+
+/* Room: Header */
 div[class*="LiveRoomBanner"] {
 	width: calc(100%);
 }
@@ -150,6 +161,52 @@ div[class*="LiveRoomBanner"] {
 /*
  * Middle:
  */
+
+div[class*="FeedLivePlayerCoreContainer"] {
+	position: absolute;
+	top: 153px;
+	right: 250px;
+	width: 127px;
+	height: 226px;
+	display: block;
+	overflow: hidden;
+	/* display:none; */
+	z-index: 9;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0),
+		-4px 5px 42px 3px rgba(0, 0, 0, 0.25) !important;
+}
+
+div[class*="LivePlayerContainer"] video {
+	z-index: 9;
+}
+
+div[class*="FeedLivePlayerContainer"] {
+	z-index: auto;
+	overflow: visible;
+}
+
+div[class*="LiveMainContent"] {
+	overflow: visible;
+}
+
+div[class*="LiveRoomSwitchButton"] div[class*="PageButton"] {
+	display: none;
+}
+div[class*="LiveRoomSwitchButton"] {
+	top: 0px;
+}
+div[data-e2e="fullscreen-icon"] {
+	top: -207px;
+	left: -100%;
+	z-index: 1000000;
+}
+div[class*="StyledGiftTray"] {
+	z-index: -100;
+	position: absolute;
+}
 
 div[class*="RoomPlayerActivePanel"],
 div[class*="LiveContent"] {
@@ -165,6 +222,7 @@ div[class*="LiveContent"] {
 div[data-e2e="live-player"] {
 	height: calc(100% - 17px);
 	margin: 0 auto;
+	min-height: 100%;
 }
 
 /*
@@ -295,13 +353,22 @@ div[class*="RoomMessage"] {
 		rgb(199 214 226) 49%,
 		rgb(203 210 218) 63%
 	) !important;
+	min-height: 125px;
+}
+div[class*="RoomMessage"] div[class*="Content"] {
+	flex: unset;
+	margin: auto auto auto 0px;
+	transition: width 500ms ease-in-out;
 }
 
 div[class*="UserInfo"] {
 	font-size: 20px !important;
 	line-height: 1.2em;
 }
-
+div[data-e2e="chat-message"] div[class*="Comment"],
+div[data-e2e="social-message-text"] {
+	transition: width 250ms ease-in-out;
+}
 div[data-e2e="chat-message"],
 div[class*="SocialMessage"] {
 	padding: 8px 16px !important;
@@ -356,6 +423,7 @@ div[class*="SocialMessage"] span[class*="EllipsisName"] {
 	max-width: 1000px;
 }
 div[class*="SocialMessage"] div[data-e2e="social-message-text"] {
+	flex: unset;
 	padding-top: 11px;
 }
 
@@ -364,11 +432,13 @@ div[class*="LeadIcon"],
 div[class*="LeadIcon-StyledLeadIcon"] {
 	width: 50px;
 	height: 50px;
+	margin: auto 13px auto 0;
 }
 
 /* Chat Room: Message: Join */
 div[class*="BottomStickyMessageContainer"] {
 	background-color: rgba(253, 253, 255, 0.96);
+	height: 30px;
 }
 
 /* Chat Room: Message: Join: User: Icon */
