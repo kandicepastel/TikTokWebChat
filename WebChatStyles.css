@@ -346,7 +346,7 @@ span[data-e2e="message-owner-name"] + div span::first-letter {
 
 div[class*="RoomMessage"] {
 	font-size: 22px;
-	background: (235, 241, 242) !important;
+	background: rgb(235, 241, 242) !important;
 	background: linear-gradient(
 		142deg,
 		rgb(235 241 242) 31%,
@@ -358,7 +358,7 @@ div[class*="RoomMessage"] {
 div[class*="RoomMessage"] div[class*="Content"] {
 	flex: unset;
 	margin: auto auto auto 0px;
-	transition: width 500ms ease-in-out;
+	transition: width 500ms ease-in;
 }
 
 div[class*="UserInfo"] {
@@ -367,20 +367,43 @@ div[class*="UserInfo"] {
 }
 div[data-e2e="chat-message"] div[class*="Comment"],
 div[data-e2e="social-message-text"] {
-	transition: width 250ms ease-in-out;
+	transition: width 250ms ease-out;
 }
-div[data-e2e="chat-message"],
+div[data-e2e="chat-message"] div[class*="Comment"] {
+	padding: 8px auto !important;
+	font-size: 22px !important;
+	line-height: 1.2em !important;
+}
 div[class*="SocialMessage"] {
 	padding: 8px 16px !important;
 	font-size: 22px !important;
 	line-height: 1.2em !important;
 }
+div[data-e2e="chat-message"] {
+	margin: 7px auto 7px 0px;
+}
+div[data-e2e="chat-message"] div[class*="Comment"] span {
+	font-style: italic;
+	font-weight: 500;
+}
+div[data-e2e="chat-message"] div[class*="Comment"] img {
+	width: 50px;
+	height: 50px;
+	margin: 5px;
+	border-radius: 4px;
+}
 div[data-e2e="chat-message"]:hover {
-	background-color: rgb(248, 248, 248, 0.98);
+	background-color: rgba(248, 248, 248, 0.98);
 }
 div[class*="SocialMessage"] {
 	text-align: right;
-	background-color: #333;
+	background-color: rgb(59 54 106) 31%;
+	background: linear-gradient(
+		19deg,
+		rgb(59 54 106) 10%,
+		rgb(51 50 76) 49%,
+		rgb(60 56 85) 63%
+	);
 	color: #aaa;
 }
 
@@ -411,7 +434,7 @@ div[class*="SocialMessage"] {
 }
 .tiktok-15hhtcj .tiktok-9wfq77 span[class*="NickName"] {
 	font-weight: bold;
-	color: rgb(22 24 35 / 79%);
+	color: rgb(22 24 35) 79%;
 }
 
 div[class*="SocialMessage"] span[class*="NickName"] {
