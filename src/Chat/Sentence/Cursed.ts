@@ -5,9 +5,10 @@ import Curse from './Word/Curse';
 let util: Util = new Util();
 
 export default class CursedSentence extends Sentence {
-	html: string = "<span style='color: red;'>*</span>";
+	turser: string = '*';
+	html: string = "<span style='color: red;'>" + this.turser + '</span>';
 
-	listOfCurses: string[][] = [
+	list: string[][] = [
 		['YW51cw==', 'YXNz'],
 		['Yml0Y2g=', 'Ymxvdw==', 'Ym9mZg==', 'YnJlYXN0', 'YnV0dA=='],
 		['Y29jaw==', 'Y2xpdA==', 'Y3Vt', 'Y3VudA=='],
@@ -50,8 +51,7 @@ export default class CursedSentence extends Sentence {
 			}
 
 			// Create: List: Possible Curses (`possibleCurses`)
-			let possibleCurses: string[] | undefined =
-				this.listOfCurses[word.firstLetter.index];
+			let possibleCurses: string[] | undefined = this.list[word.firstLetter.index];
 			if (possibleCurses === undefined) {
 				return;
 			}
@@ -61,7 +61,7 @@ export default class CursedSentence extends Sentence {
 				possibleCurses.forEach((possibleCurse) => {
 					possibleCurse = util.base64ToWord(possibleCurse) ?? '';
 					if (word.word.includes(possibleCurse)) {
-						word.decorate(possibleCurse, this.html);
+						word.decorate(possibleCurse, this.html, this.turser);
 					}
 				});
 			}

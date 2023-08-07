@@ -8,33 +8,33 @@ export default class CheeredSentence extends Sentence {
 	html: string =
 		"$1<span style='color: purple;font-weight: bolder; font-size: 30px;display:inline-block;padding:10px;'> &#x1F389; $2 &#x1F389;</span>$3";
 
-	listOfCheers: string[][] = [
-		[''], // a
-		[''], // b
-		[''], // c
-		[''], // d
-		[''], // e
-		[''], // f
-		[''], // g
-		[''], // h
-		[''], // i
-		[''], // j
-		[''], // k
-		[''], // l
-		[''], // m
-		[''], // n
-		[''], // o
-		[''], // p
-		[''], // q
-		[''], // r
-		[''], // s
-		[''], // t
-		[''], // u
-		[''], // v
-		[''], // w
-		[''], // x
-		['you got this'], // y
-		[''], // z
+	list: string[][] = [
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		[''],
+		['eW91IGdvdCB0aGlz'],
+		[''],
 	];
 
 	words: Cheer[] = [];
@@ -55,8 +55,7 @@ export default class CheeredSentence extends Sentence {
 			}
 
 			// Create: List: Possible Cheers (`possibleCheers`)
-			let possibleCheers: string[] | undefined =
-				this.listOfCheers[word.firstLetter.index];
+			let possibleCheers: string[] | undefined = this.list[word.firstLetter.index];
 			if (possibleCheers === undefined) {
 				return;
 			}
