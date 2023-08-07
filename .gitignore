@@ -1,3 +1,4 @@
 wordstoadd.txt
 src/ignores
 src/exampleData
+*.wordlist
