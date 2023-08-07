@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"target": "es2015",
+		"downlevelIteration": true,
+		"importHelpers": true,
+		"esModuleInterop": true,
+		"module": "commonjs",
+		"lib": ["dom", "es5", "es2015.collection", "es2015.iterable"],
+		"outDir": "./dist"
+	},
+	"files": ["./src/index.ts"]
+}
