@@ -29,6 +29,7 @@ export default class CursedSentence extends Sentence {
 		['cmV0YXJk', 'cmVjdHVt'],
 		['c2thbms=', 'c2hpdA==', 'c2x1dA==', 'c3Vjaw=='],
 		['dGl0', 'dHVyZA=='],
+		[''],
 		['dmFnaW5h', 'dnVsdmE='],
 		['d2Fw', 'd2V0YmFjaw==', 'd2hvcmU='],
 		[''],
