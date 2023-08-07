@@ -1,17 +1,18 @@
 import FireySentence from './Chat/Sentence/Firey';
+import SpicySentence from './Chat/Sentence/Spicy';
 import CheerySentence from './Chat/Sentence/Cheery';
 import Util from './Util';
 
 let util: Util = new Util();
 
-let sentence = new FireySentence('exampleSentence');
+let sentence = new CheerySentence('exampleSentence');
 
 let blur = (): string[][] => {
 	let blurred = sentence.list;
 	const blurAmount: number = sentence.blurAmount;
 
 	sentence.list.forEach((words, rowIndex) => {
-		if (words.length > 0) {
+		if (words) {
 			words.forEach((word, indexWord) => {
 				let text: string = word;
 				for (var a = 0; a < blurAmount; a++) {
@@ -45,7 +46,7 @@ let deblur = () => {
 };
 
 // console.log(blur());
-console.log(deblur());
+// console.log(deblur());
 
 /*
 
