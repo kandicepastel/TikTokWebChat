@@ -8,17 +8,44 @@ export default class CheeredSentence extends Sentence {
 	html: string =
 		"$1<span style='color: purple;font-weight: bolder; font-size: 30px;display:inline-block;padding:10px;'> &#x1F389; $2 &#x1F389;</span>$3";
 
-	listOfCheers: string[][] = [];
+	listOfCheers: string[][] = [
+		[''], // a
+		[''], // b
+		[''], // c
+		[''], // d
+		[''], // e
+		[''], // f
+		[''], // g
+		[''], // h
+		[''], // i
+		[''], // j
+		[''], // k
+		[''], // l
+		[''], // m
+		[''], // n
+		[''], // o
+		[''], // p
+		[''], // q
+		[''], // r
+		[''], // s
+		[''], // t
+		[''], // u
+		[''], // v
+		[''], // w
+		[''], // x
+		['you got this'], // y
+		[''], // z
+	];
 
 	words: Cheer[] = [];
 
 	constructor(sentence: string) {
 		super(sentence);
 
-		this.checkForCurses();
+		this.checkForCheers();
 	}
 
-	checkForCurses = (): void => {
+	checkForCheers = (): void => {
 		this.words.forEach((word) => {
 			if (word.firstLetter === undefined) {
 				return;
@@ -27,19 +54,19 @@ export default class CheeredSentence extends Sentence {
 				return;
 			}
 
-			// Create: List: Possible Curses (`possibleCurses`)
-			let possibleCurses: string[] | undefined =
+			// Create: List: Possible Cheers (`possibleCheers`)
+			let possibleCheers: string[] | undefined =
 				this.listOfCheers[word.firstLetter.index];
-			if (possibleCurses === undefined) {
+			if (possibleCheers === undefined) {
 				return;
 			}
 
-			// Scan: For: Possible Curses
-			if (possibleCurses.length > 0) {
-				possibleCurses.forEach((possibleCurse) => {
-					possibleCurse = util.base64ToWord(possibleCurse) ?? '';
-					if (word.word.includes(possibleCurse)) {
-						word.decorate(possibleCurse, this.html);
+			// Scan: For: Possible Cheers
+			if (possibleCheers.length > 0) {
+				possibleCheers.forEach((possibleCheer) => {
+					possibleCheer = util.base64ToWord(possibleCheer) ?? '';
+					if (word.word.includes(possibleCheer)) {
+						word.decorate(possibleCheer, this.html);
 					}
 				});
 			}
