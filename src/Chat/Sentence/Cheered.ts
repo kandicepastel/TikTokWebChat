@@ -6,7 +6,7 @@ let util: Util = new Util();
 
 export default class CheeredSentence extends Sentence {
 	html: string =
-		"$1<span style='color: purple;font-weight: bolder; font-size: 30px;display:inline-block;padding:10px;'> 🎉 $2 🎉 </span>$3";
+		"$1<span style='color: purple;font-weight: bolder; font-size: 30px;display:inline-block;padding:10px;'> &#x1F389; $2 &#x1F389;</span>$3";
 
 	listOfCheers: string[][] = [];
 
