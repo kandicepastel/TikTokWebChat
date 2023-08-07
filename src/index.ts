@@ -32,9 +32,9 @@ chatMessageList.on('scroll', function () {
 
 function parseChat() {
 	let selectors: JQuery<HTMLElement> = $('div[data-e2e="chat-message"]:not(.processed)');
-	if (selectors.length > 0) {
-		console.log(selectors);
-	}
+	// if (selectors.length > 0) {
+	// 	console.log(selectors);
+	// }
 
 	// Chat Messages
 	selectors.each(function () {
