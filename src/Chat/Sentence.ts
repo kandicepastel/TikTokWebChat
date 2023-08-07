@@ -11,6 +11,7 @@ export default class Sentence {
 	sentence: string;
 
 	words: Word[] = [];
+	getWords = (): Word[] => this.words;
 
 	constructor(sentence: string) {
 		this.sentence = sentence;
@@ -21,7 +22,7 @@ export default class Sentence {
 	findWords = (seperator: string | RegExp = /\w/gi): Word[] => {
 		let words: string[] = this.sentence
 			.split(seperator)
-			// Filter Out: empty strings (ie: multiple spaces between words)
+			// Filter Out: Empty Strings (ie: multiple spaces between words)
 			.filter((word) => word.trim() !== '');
 
 		// Empty: Array: `this.words`
@@ -35,7 +36,12 @@ export default class Sentence {
 	};
 
 	get = (seperator: string = ' '): string => {
-		// this.sentence = '';
+		this.update(seperator);
+
+		return this.sentence;
+	};
+
+	update = (seperator: string = ' '): void => {
 		this.words.forEach((word, index) => {
 			if (index === 0) {
 				this.sentence = word.word;
@@ -46,9 +52,5 @@ export default class Sentence {
 				this.sentence += seperator;
 			}
 		});
-
-		return this.sentence;
 	};
-
-	getWords = (): Word[] => this.words;
 }
