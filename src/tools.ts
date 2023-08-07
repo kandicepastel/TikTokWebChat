@@ -1,10 +1,10 @@
 import FireySentence from './Chat/Sentence/Firey';
-import CheeredSentence from './Chat/Sentence/Cheery';
+import CheerySentence from './Chat/Sentence/Cheery';
 import Util from './Util';
 
 let util: Util = new Util();
 
-let sentence = new CheeredSentence('exampleSentence');
+let sentence = new FireySentence('exampleSentence');
 
 let blur = (): string[][] => {
 	let blurred = sentence.list;
@@ -45,7 +45,7 @@ let deblur = () => {
 };
 
 // console.log(blur());
-// console.log(deblur());
+console.log(deblur());
 
 /*
 
