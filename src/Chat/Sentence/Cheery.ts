@@ -4,10 +4,10 @@ import Cheer from './Word/Cheer';
 
 let util: Util = new Util();
 
-export default class CheeredSentence extends Sentence {
+export default class CheerySentence extends Sentence {
 	html: string =
 		"$1<span style='color: purple;font-weight: bolder; font-size: 30px;display:inline-block;padding:10px;'> &#x1F389; $2 &#x1F389;</span>$3";
-
+	blurAmount = 1;
 	list: string[][] = [
 		[''],
 		[''],

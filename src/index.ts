@@ -5,7 +5,7 @@
  *
  */
 
-import CursedSentence from './Chat/Sentence/Cursed';
+import FireySentence from './Chat/Sentence/Firey';
 
 // $(function () {
 const widthOfSide: number = 350;
@@ -46,14 +46,14 @@ function parseChat() {
 			// })
 			.each(function () {
 				let textContent: string = this.textContent;
-				let cursedSentence: CursedSentence = new CursedSentence(textContent);
-				cursedSentence.sentence = cursedSentence.get();
-				if (cursedSentence.sentence.length <= 0) {
+				let fireySentence: FireySentence = new FireySentence(textContent);
+				fireySentence.sentence = fireySentence.get();
+				if (fireySentence.sentence.length <= 0) {
 					return;
 				}
 
 				// Use a regular expression to find words starting with "@"
-				let replacedText: string = cursedSentence.sentence
+				let replacedText: string = fireySentence.sentence
 					.replace(/(\@\w+)/g, '<span style="color: #51acff;">$1</span>')
 					.replace(
 						/(.)*(you got this)(.)*/gi,

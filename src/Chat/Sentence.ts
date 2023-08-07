@@ -1,5 +1,12 @@
 import Word from './Sentence/Word';
 
+/*
+	Sentence Types:
+	 - cheerey
+	 - spicy
+	 - firey
+*/
+
 export default class Sentence {
 	sentence: string;
 
