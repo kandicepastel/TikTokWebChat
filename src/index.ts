@@ -20,6 +20,33 @@ $(function () {
 		parseChat();
 	}
 
+	class User {
+		name: string = '';
+
+		comments: string[] = [];
+		shares: string[] = [];
+		gifts: string[] = [];
+		topGifter: boolean;
+
+		grade: number;
+		fan: string;
+		sub: boolean;
+		mod: boolean;
+
+		constructor(name: string) {
+			this.name = name;
+		}
+
+		addComment = (comment: string) => {
+			if (!this.comments.includes(comment)) {
+				this.comments.push(comment);
+			}
+		};
+	}
+
+	let users: User[] = [];
+	let usersCount: number = -1;
+
 	let chatMessageList: JQuery<HTMLElement> = $('div[class*="ChatMessageList"]');
 	chatMessageList.on('scroll', function () {
 		if (!isScrolling) {
@@ -27,6 +54,9 @@ $(function () {
 			setTimeout(function () {
 				isScrolling = false;
 				parseChat();
+				if (usersCount < users.length) {
+					usersCount = users.length;
+				}
 			}, 250);
 			scrollToTop();
 			isScrolling = true;
@@ -40,6 +70,22 @@ $(function () {
 		selectors = $('div[data-e2e="chat-message"]:not(.processed)');
 		selectors.each(function () {
 			let item: JQuery<HTMLElement> = $(this);
+
+			const username: string = encodeURIComponent(
+				$(item.find('[data-e2e="message-owner-name"]')).attr('title') ?? ''
+			);
+
+			const concurrentUser: User = users.find((user) => user.name === username);
+			const concurrentUserIndex: number = concurrentUser
+				? users.findIndex((user) => user === concurrentUser)
+				: -1;
+
+			if (concurrentUser) {
+			} else {
+				let newUser: User = new User(username);
+				users.push(newUser);
+			}
+
 			let child: JQuery<HTMLElement> = $(item.find('[class*="Comment"]'));
 			child
 				.filter(function () {
@@ -80,7 +126,11 @@ $(function () {
 						$(this).html(sentence.sentence);
 					}
 
-					textContent = sentence.sentence;
+					if (concurrentUserIndex >= 0) {
+						const encodedSentence: string = encodeURIComponent(sentence.sentence);
+						users[concurrentUserIndex].addComment(encodedSentence);
+						console.log(users);
+					}
 				});
 			$(this).addClass('processed');
 		});
